@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_primary">#F37118</color>
+    <color name="color_secondary">#103576</color>
+    <color name="color_secondary_opacity_10">#80103576</color>
+    <color name="body_text_color">#63728C</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="orange_color_opacity_25">#40F37118</color>
+    <color name="input_field_color">#E8E9EC</color>
+    <color name="input_field_hint_color">#909297</color>
+    <color name="color_grey">#63728C</color>
+    <color name="transparent_white">#E4E3E9</color>
+    <color name="transparent">#0D000000</color>
+    <color name="transparent_darker">#A6000000</color>
+    <color name="transparent_darker_70">#B3000000</color>
+    <color name="transparent_drop_shadow">#1A000000</color>
+    <color name="red">#EA1303</color>
+    <color name="yellow">#EAD30B</color>
+    <color name="green">#24B561</color>
+</resources>
