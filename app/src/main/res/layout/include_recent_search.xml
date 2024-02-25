@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/Widget.StarWars.TextView.BodyMedium16"
+                android:text="@string/recent_searches"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"/>
+
+            <ImageView
+                android:id="@+id/deleteAllCharacters"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/delete_forever"
+                android:padding="@dimen/padding_5"
+                android:layout_gravity="center_vertical"/>
+
+        </LinearLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_5" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recentSearchRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/items_recent_search_recycler_design"
+            android:layout_marginTop="@dimen/margin_5"/>
+
+    </LinearLayout>
+</layout>

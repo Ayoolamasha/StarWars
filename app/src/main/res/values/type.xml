@@ -53,7 +53,7 @@
     <style name="TextAppearance.StarWars.BodyText2" parent="TextAppearance.MaterialComponents.Body2">
         <item name="fontFamily">@font/fira_sans_regular</item>
         <item name="android:textColor">@color/color_secondary</item>
-        <item name="android:textSize">@dimen/body_text_size_16</item>
+        <item name="android:textSize">@dimen/subtitle_text_size_14</item>
         <item name="lineHeight">@dimen/line_height_30</item>
         <item name="fontWeight">@integer/font_weight_400</item>
     </style>

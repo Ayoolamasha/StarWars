@@ -3,12 +3,14 @@ package com.ayoolamasha.starwars.apiService.searchApiService
 import com.ayoolamasha.starwars.featureSearch.data.model.CharacterModelResponse
 import com.ayoolamasha.starwars.featureSearch.data.model.CharacterSearchResponse
 import com.ayoolamasha.starwars.featureSearch.data.model.FilmsResponse
+import com.ayoolamasha.starwars.featureSearch.data.model.PlanetResponse
 import com.ayoolamasha.starwars.featureSearch.data.model.SpeciesResponse
 import retrofit2.Response
+import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class SearchApiServiceHelperImpl(
+class SearchApiServiceHelperImpl @Inject constructor(
     private val searchApiService: SearchApiService
 ) : SearchApiServiceHelper {
 
@@ -26,5 +28,9 @@ class SearchApiServiceHelperImpl(
 
     override suspend fun getSpecieDetails(speciesUrl: String): Response<SpeciesResponse> {
         return searchApiService.getSpecieDetails(speciesUrl = speciesUrl)
+    }
+
+    override suspend fun getPlanet(planetUrl: String): Response<PlanetResponse> {
+        return searchApiService.getPlanet(planetUrl = planetUrl)
     }
 }

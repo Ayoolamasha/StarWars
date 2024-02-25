@@ -57,8 +57,4 @@ class NetworkService @Inject constructor(private val moshi: Moshi) {
     ): Retrofit.Builder = callFactory {
         delegate.get().newCall(it)
     }
-
-    private inline fun Retrofit.Builder.callFactory(
-        crossinline body: (Request) -> Call
-    ): Retrofit.Builder = callFactory { request -> body(request) }
 }

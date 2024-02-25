@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="shouldShowLottie"
+            type="Boolean" />
+
+        <variable
+            name="shouldShowRecentSearch"
+            type="Boolean" />
+
+        <variable
+            name="shouldShowSearchResult"
+            type="Boolean" />
+
+        <variable
+            name="view"
+            type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- APP BAR LAYOUT START -->
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_primary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_10">
+
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/searchText"
+                    style="@style/SearchViewStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/Theme.App.SearchViewStyle"
+                    app:layout_constraintStart_toEndOf="@id/guidelineAppBarStart"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/guidelineAppBarEnd"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5" />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineAppBarStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.02" />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineAppBarEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.98" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!-- APP BAR LAYOUT END -->
+
+        <!-- INCLUDE LOTTIE -->
+        <include
+            android:id="@+id/includeLottie"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="@dimen/height_300"
+            layout="@layout/include_search_animation"
+            android:visibility="@{shouldShowLottie ? view.VISIBLE : view.GONE}"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/guidelineStart"
+            app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+            app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <!-- INCLUDE RECENT SEARCH -->
+        <include
+            android:id="@+id/includeRecentSearch"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="@dimen/height_0"
+            android:layout_marginTop="@dimen/margin_10"
+            layout="@layout/include_recent_search"
+            android:visibility="@{shouldShowRecentSearch ? view.VISIBLE : view.GONE}"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/guidelineStart"
+            app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+            app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        <!-- INCLUDE SEARCH RESULT -->
+
+        <include
+            android:id="@+id/includeSearchResult"
+            android:layout_width="@dimen/width_0"
+            android:layout_height="@dimen/height_0"
+            android:layout_marginTop="@dimen/margin_10"
+            layout="@layout/include_search_result"
+            android:visibility="@{shouldShowSearchResult ? view.VISIBLE : view.GONE}"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/guidelineStart"
+            app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+            app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

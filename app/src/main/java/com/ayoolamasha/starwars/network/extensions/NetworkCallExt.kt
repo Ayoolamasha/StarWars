@@ -1,11 +1,14 @@
 package com.ayoolamasha.starwars.network.extensions
 
 
-import com.ayoolamasha.starwars.network.extensions.toError
-import com.ayoolamasha.starwars.network.extensions.toSuccess
 import com.ayoolamasha.starwars.network.mappers.Either
 import com.ayoolamasha.starwars.network.middleware.NetworkMiddleware
-import com.ayoolamasha.starwars.network.model.*
+import com.ayoolamasha.starwars.network.model.Failure
+import com.ayoolamasha.starwars.network.model.NetworkConnectionLostSuddenly
+import com.ayoolamasha.starwars.network.model.ResponseMessage
+import com.ayoolamasha.starwars.network.model.SSLError
+import com.ayoolamasha.starwars.network.model.ServiceBodyFailure
+import com.ayoolamasha.starwars.network.model.TimeOut
 import com.squareup.moshi.JsonAdapter
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext

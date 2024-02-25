@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/characterSearchFragment">
+
+    <fragment
+        android:id="@+id/characterSearchFragment"
+        android:name="com.ayoolamasha.starwars.featureSearch.presentation.ui.CharacterSearchFragment"
+        android:label="CharacterSearchFragment"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_characterSearchFragment_to_characterDetailsViewHolderFragment"
+            app:destination="@id/characterDetailsViewHolderFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/characterDetailsViewHolderFragment"
+        android:name="com.ayoolamasha.starwars.featureSearch.presentation.ui.CharacterDetailsViewHolderFragment"
+        android:label="CharacterDetailsViewHolderFragment"
+        tools:layout="@layout/fragment_search_details_pager">
+        <action
+            android:id="@+id/action_characterDetailsViewHolderFragment_to_characterSearchFragment"
+            app:destination="@id/characterSearchFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/characterSearchFragment"/>
+        <action
+            android:id="@+id/action_characterDetailsViewHolderFragment_to_characterFilmDetails"
+            app:destination="@id/characterFilmDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterFilmDetails"
+        android:name="com.ayoolamasha.starwars.featureSearch.presentation.ui.CharacterFilmDetails"
+        android:label="CharacterFilmDetails"
+        tools:layout="@layout/fragment_character_films_details">
+        <action
+            android:id="@+id/action_characterFilmDetails_to_characterDetailsViewHolderFragment"
+            app:destination="@id/characterDetailsViewHolderFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/characterDetailsViewHolderFragment"/>
+    </fragment>
+</navigation>

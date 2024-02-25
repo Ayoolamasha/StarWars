@@ -3,6 +3,7 @@ package com.ayoolamasha.starwars.apiService.searchApiService
 import com.ayoolamasha.starwars.featureSearch.data.model.CharacterModelResponse
 import com.ayoolamasha.starwars.featureSearch.data.model.CharacterSearchResponse
 import com.ayoolamasha.starwars.featureSearch.data.model.FilmsResponse
+import com.ayoolamasha.starwars.featureSearch.data.model.PlanetResponse
 import com.ayoolamasha.starwars.featureSearch.data.model.SpeciesResponse
 import retrofit2.Response
 import retrofit2.http.GET
@@ -22,4 +23,7 @@ interface SearchApiService {
 
     @GET
     suspend fun getSpecieDetails(@Url speciesUrl: String): Response<SpeciesResponse>
+
+    @GET
+    suspend fun getPlanet(@Url planetUrl: String): Response<PlanetResponse>
 }

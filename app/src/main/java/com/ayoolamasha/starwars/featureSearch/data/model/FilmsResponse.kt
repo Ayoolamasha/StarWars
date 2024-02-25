@@ -6,5 +6,5 @@ data class FilmsResponse(
     @Json(name = "title")
     val title: String?,
     @Json(name = "opening_crawl")
-    val opening_crawl: String?
+    val openingCrawl: String?,
 )

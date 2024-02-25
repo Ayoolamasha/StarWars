@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">StarWars</string>
+    <string name="search_query">Enter character name</string>
+    <string name="recent_searches">Recent Searches</string>
+    <string name="character_details">Character Details</string>
+    <string name="profile">Profile</string>
+    <string name="planet">Planet</string>
+    <string name="species">Species</string>
+    <string name="films">Films</string>
+    <string name="name">Name:</string>
+    <string name="birthYear">Birth Year:</string>
+    <string name="height">Height:</string>
+    <string name="population">Population:</string>
+    <string name="language">Language:</string>
+    <string name="home_world">Home World:</string>
+    <string name="retry">Retry</string>
+    <string name="delete_all_characters">Delete All Characters</string>
+    <string name="delete_all_characters_sub">You are about to delete all saved characters</string>
+    <string name="delete">Delete</string>
+    <string name="delete_success">All Characters Deleted</string>
+    <string name="no_data_available">No Data Available</string>
 </resources>

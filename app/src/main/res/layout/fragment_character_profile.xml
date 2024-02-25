@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="characterUi"
+            type="com.ayoolamasha.starwars.featureSearch.domain.model.CharacterUICase" />
+
+        <variable
+            name="planetUi"
+            type="com.ayoolamasha.starwars.featureSearch.domain.model.PlanetUiCase" />
+
+        <variable
+            name="speciesUI"
+            type="com.ayoolamasha.starwars.featureSearch.domain.model.SpeciesUiCase" />
+    </data>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/characterProfileProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_20"
+                android:src="@drawable/loading_progress_animate"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/profileContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <!-- PROFILE -->
+<!--                <TextView-->
+<!--                    android:id="@+id/profile"-->
+<!--                    style="@style/Widget.StarWars.TextView.BodyMedium16"-->
+<!--                    android:layout_marginTop="@dimen/margin_20"-->
+<!--                    android:text="@string/profile"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toStartOf="@id/guidelineEnd"-->
+<!--                    app:layout_constraintHorizontal_bias="0.0"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/guidelineStart"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:layout_constraintVertical_bias="0.0" />-->
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/profileCard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_20"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/radius_10"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@id/guidelineStart"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/guidelineCardEnd"
+                            app:layout_constraintStart_toEndOf="@id/guidelineCardStart"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.1">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_10"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/Widget.StarWars.TextView.BodyMedium16"
+                                    android:text="@string/name"
+                                    android:textSize="@dimen/subtitle_text_size_14" />
+
+                                <TextView
+                                    style="@style/Widget.StarWars.TextView.BodyRegular14"
+                                    android:layout_marginStart="@dimen/margin_5"
+                                    android:text="@{characterUi.name}"
+                                    tools:text="Luke SkyWalker" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_10"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/Widget.StarWars.TextView.BodyMedium16"
+                                    android:text="@string/birthYear"
+                                    android:textSize="@dimen/subtitle_text_size_14" />
+
+                                <TextView
+                                    style="@style/Widget.StarWars.TextView.BodyRegular14"
+                                    android:layout_marginStart="@dimen/margin_5"
+                                    android:text="@{characterUi.birthYear}"
+                                    tools:text="660BBY" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_10"
+                                android:layout_marginBottom="@dimen/margin_20"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/Widget.StarWars.TextView.BodyMedium16"
+                                    android:text="@string/height"
+                                    android:textSize="@dimen/subtitle_text_size_14" />
+
+                                <TextView
+                                    style="@style/Widget.StarWars.TextView.BodyRegular14"
+                                    android:layout_marginStart="@dimen/margin_5"
+                                    app:heightConverter="@{characterUi.height}"
+                                    tools:text="175 CM, 69.0 INCHES" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guidelineCardStart"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_begin="18dp" />
+
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guidelineCardEnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="@integer/guidelineEnd" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- PLANET -->
+                <TextView
+                    android:id="@+id/planet"
+                    style="@style/Widget.StarWars.TextView.BodyMedium16"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:text="@string/planet"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/profileCard"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/planetCard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginBottom="@dimen/margin_10"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/radius_10"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/planet"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/guidelinePlanetCardEnd"
+                            app:layout_constraintStart_toEndOf="@id/guidelinePlanetCardStart"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.1">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_10"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/Widget.StarWars.TextView.BodyMedium16"
+                                    android:text="@string/name"
+                                    android:textSize="@dimen/subtitle_text_size_14" />
+
+                                <TextView
+                                    android:id="@+id/planetName"
+                                    style="@style/Widget.StarWars.TextView.BodyRegular14"
+                                    android:layout_marginStart="@dimen/margin_5"
+                                    android:text="@{planetUi.name}"
+                                    tools:text="Earth" />
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_10"
+                                android:layout_marginBottom="@dimen/margin_20"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/Widget.StarWars.TextView.BodyMedium16"
+                                    android:text="@string/population"
+                                    android:textSize="@dimen/subtitle_text_size_14" />
+
+                                <TextView
+                                    android:id="@+id/planetPopulation"
+                                    style="@style/Widget.StarWars.TextView.BodyRegular14"
+                                    android:layout_marginStart="@dimen/margin_5"
+                                    android:text="@{planetUi.population}"
+                                    tools:text="2000000" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guidelinePlanetCardStart"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.05" />
+
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guidelinePlanetCardEnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="@integer/guidelineEnd" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- SPECIES -->
+                <TextView
+                    android:id="@+id/species"
+                    style="@style/Widget.StarWars.TextView.BodyMedium16"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:text="@string/species"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/planetCard"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/speciesCard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginBottom="@dimen/margin_10"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/radius_10"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/species"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/guidelineSpeciesCardEnd"
+                            app:layout_constraintStart_toEndOf="@id/guidelineSpeciesCardStart"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.1">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_10"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/Widget.StarWars.TextView.BodyMedium16"
+                                    android:text="@string/name"
+                                    android:textSize="@dimen/subtitle_text_size_14" />
+
+                                <TextView
+                                    android:id="@+id/specieName"
+                                    style="@style/Widget.StarWars.TextView.BodyRegular14"
+                                    android:layout_marginStart="@dimen/margin_5"
+                                    android:text="@{speciesUI.name}"
+                                    tools:text="@string/name" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_10"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/Widget.StarWars.TextView.BodyMedium16"
+                                    android:text="@string/language"
+                                    android:textSize="@dimen/subtitle_text_size_14" />
+
+                                <TextView
+                                    android:id="@+id/specieLanguage"
+                                    style="@style/Widget.StarWars.TextView.BodyRegular14"
+                                    android:layout_marginStart="@dimen/margin_5"
+                                    android:text="@{speciesUI.language}"
+                                    tools:text="@string/name" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_10"
+                                android:layout_marginBottom="@dimen/margin_20"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/Widget.StarWars.TextView.BodyMedium16"
+                                    android:text="@string/home_world"
+                                    android:textSize="@dimen/subtitle_text_size_14" />
+
+                                <TextView
+                                    android:id="@+id/speciesHomeWorld"
+                                    style="@style/Widget.StarWars.TextView.BodyRegular14"
+                                    android:layout_marginStart="@dimen/margin_5"
+                                    android:text="@{planetUi.name}"
+                                    tools:text="@string/name" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guidelineSpeciesCardStart"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_begin="18dp" />
+
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guidelineSpeciesCardEnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="@integer/guidelineEnd" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.05" />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="@integer/guidelineEnd" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <LinearLayout
+                android:id="@+id/errorLinear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/no_data" />
+
+                <TextView
+                    android:id="@+id/errorMessage"
+                    style="@style/Widget.StarWars.TextView.BodyMedium16"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_20"
+                    tools:text="Luke SkyWalker" />
+
+                <Button
+                    android:id="@+id/retryButton"
+                    style="@style/Widget.StarWars.Button.Main"
+                    android:text="@string/retry" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

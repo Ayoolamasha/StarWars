@@ -2,6 +2,7 @@ package com.ayoolamasha.starwars.di
 
 
 import com.ayoolamasha.starwars.BuildConfig
+import com.ayoolamasha.starwars.apiService.searchApiService.SearchApiService
 import com.ayoolamasha.starwars.network.NetworkService
 import com.ayoolamasha.starwars.network.middleware.ConnectivityMiddleware
 import com.ayoolamasha.starwars.network.middleware.MiddlewareProvider
@@ -53,4 +54,11 @@ object NetworkModule {
         MiddlewareProviderImpl.Builder()
             .add(middleware = connectivityMiddlewareImpl)
             .build()
+
+
+    @Provides
+    @Singleton
+    fun providesSearchApiService(retrofit: Retrofit): SearchApiService{
+        return retrofit.create(SearchApiService::class.java)
+    }
 }
