@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/characterSearchFragment"
-        android:name="com.ayoolamasha.starwars.featureSearch.presentation.ui.CharacterSearchFragment"
+        android:name="com.ayoolamasha.starwars.features.presentation.featureSearch.ui.CharacterSearchFragment"
         android:label="CharacterSearchFragment"
         tools:layout="@layout/fragment_search">
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/characterDetailsViewHolderFragment"
-        android:name="com.ayoolamasha.starwars.featureSearch.presentation.ui.CharacterDetailsViewHolderFragment"
+        android:name="com.ayoolamasha.starwars.features.presentation.featureCharacterDetails.ui.CharacterDetailsViewHolderFragment"
         android:label="CharacterDetailsViewHolderFragment"
         tools:layout="@layout/fragment_search_details_pager">
         <action
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/characterFilmDetails"
-        android:name="com.ayoolamasha.starwars.featureSearch.presentation.ui.CharacterFilmDetails"
+        android:name="com.ayoolamasha.starwars.features.presentation.featureCharacterDetails.ui.CharacterFilmDetails"
         android:label="CharacterFilmDetails"
         tools:layout="@layout/fragment_character_films_details">
         <action

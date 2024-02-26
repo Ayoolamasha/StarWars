@@ -31,7 +31,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".featureSearch.presentation.SearchActivity"
+        <activity android:name=".features.presentation.SearchActivity"
             android:exported="true"
             android:theme="@style/Theme.StarWars.DayNight"/>
     </application>

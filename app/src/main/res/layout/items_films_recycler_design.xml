@@ -7,7 +7,7 @@
 
         <variable
             name="filmsUI"
-            type="com.ayoolamasha.starwars.featureSearch.domain.model.FilmsUiCase" />
+            type="com.ayoolamasha.starwars.domain.model.Films" />
 
         <variable
             name="clickListener"

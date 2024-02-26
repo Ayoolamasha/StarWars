@@ -7,7 +7,7 @@
 
         <variable
             name="characterUiCase"
-            type="com.ayoolamasha.starwars.featureSearch.domain.model.CharacterUICase" />
+            type="com.ayoolamasha.starwars.domain.model.Characters" />
 
         <variable
             name="clickListener"

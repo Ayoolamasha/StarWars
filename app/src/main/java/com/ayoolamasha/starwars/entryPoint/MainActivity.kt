@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.ayoolamasha.starwars.R
-import com.ayoolamasha.starwars.featureSearch.presentation.SearchActivity
+import com.ayoolamasha.starwars.features.presentation.SearchActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

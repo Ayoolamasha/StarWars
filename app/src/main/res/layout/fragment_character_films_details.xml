@@ -6,7 +6,7 @@
     <data>
         <variable
             name="filmDetails"
-            type="com.ayoolamasha.starwars.featureSearch.domain.model.FilmsDetails" />
+            type="com.ayoolamasha.starwars.features.presentation.featureCharacterDetails.model.FilmsDetails" />
     </data>
 
     <ScrollView

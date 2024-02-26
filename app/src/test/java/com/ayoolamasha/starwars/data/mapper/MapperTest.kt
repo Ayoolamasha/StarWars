@@ -1,13 +1,14 @@
 package com.ayoolamasha.starwars.data.mapper
 
-import com.ayoolamasha.starwars.featureSearch.data.mapper.toCharacterUICase
-import com.ayoolamasha.starwars.featureSearch.data.mapper.toFilmsUICase
-import com.ayoolamasha.starwars.featureSearch.data.mapper.toPlanetUICase
-import com.ayoolamasha.starwars.featureSearch.data.mapper.toSpeciesUICase
-import com.ayoolamasha.starwars.featureSearch.data.model.FilmsResponse
-import com.ayoolamasha.starwars.featureSearch.data.model.PlanetResponse
-import com.ayoolamasha.starwars.featureSearch.data.model.SpeciesResponse
+import com.ayoolamasha.starwars.data.mapper.remote.toCharacterUICase
+import com.ayoolamasha.starwars.data.mapper.remote.toFilmsUICase
+import com.ayoolamasha.starwars.data.mapper.remote.toPlanetUICase
+import com.ayoolamasha.starwars.data.mapper.remote.toSpeciesUICase
+import com.ayoolamasha.starwars.data.model.FilmsResponse
+import com.ayoolamasha.starwars.data.model.PlanetResponse
+import com.ayoolamasha.starwars.data.model.SpeciesResponse
 import com.ayoolamasha.starwars.utils.fakeCharacterModelResponse
+import com.ayoolamasha.starwars.utils.fakeExpectedCharacterModelResponse
 import junit.framework.TestCase.assertEquals
 import org.junit.Test
 
@@ -18,20 +19,11 @@ class MapperTest {
         val characterModelResponse = fakeCharacterModelResponse
 
         val toCharacterUICase = characterModelResponse.toCharacterUICase()
+        val expectedData = fakeExpectedCharacterModelResponse.toCharacterUICase()
 
 
-        assertEquals("Luke SkyWalker", toCharacterUICase.name)
-        assertEquals("19BBY", toCharacterUICase.birthYear)
-        assertEquals("172", toCharacterUICase.height)
-        assertEquals(listOf(
-            "https://swapi.dev/api/films/1/",
-            "https://swapi.dev/api/films/2/",
-            "https://swapi.dev/api/films/3/",
-            "https://swapi.dev/api/films/6/"
-        ), toCharacterUICase.films)
-        assertEquals("https://swapi.dev/api/planets/1/", toCharacterUICase.homeWorld)
-        assertEquals(listOf(""), toCharacterUICase.species)
-        assertEquals("https://swapi.dev/api/people/1/", toCharacterUICase.url)
+
+        assertEquals(expectedData, toCharacterUICase)
     }
 
     @Test
@@ -41,10 +33,15 @@ class MapperTest {
             population = "7000000000"
         )
 
-        val toPlanetUICase = planetResponse.toPlanetUICase()
+        val expectedResponse = PlanetResponse(
+            name = "Earth",
+            population = "7000000000"
+        )
 
-        assertEquals("Earth", toPlanetUICase.name)
-        assertEquals("7000000000", toPlanetUICase.population)
+        val toPlanetUICase = planetResponse.toPlanetUICase()
+        val expectedData = expectedResponse.toPlanetUICase()
+
+        assertEquals(expectedData, toPlanetUICase)
     }
 
     @Test
@@ -55,11 +52,17 @@ class MapperTest {
             homeWorld = "Earth"
         )
 
-        val toSpeciesUiCase = speciesResponse.toSpeciesUICase()
+        val expectedResponse = SpeciesResponse(
+            name = "Human",
+            language = "English",
+            homeWorld = "Earth"
+        )
 
-        assertEquals("Human", toSpeciesUiCase.name)
-        assertEquals("English", toSpeciesUiCase.language)
-        assertEquals("Earth", toSpeciesUiCase.homeWorld)
+        val toSpeciesUiCase = speciesResponse.toSpeciesUICase()
+        val expectedData = expectedResponse.toSpeciesUICase()
+
+        assertEquals(expectedData, toSpeciesUiCase)
+
     }
 
     @Test
@@ -69,10 +72,17 @@ class MapperTest {
             openingCrawl = "Giving New Hope"
         )
 
+        val expectedResponse = FilmsResponse(
+            title = "A New Hope",
+            openingCrawl = "Giving New Hope"
+        )
+
         val toFilmsUiCase = filmResponse.toFilmsUICase()
 
+        val expectedData = expectedResponse.toFilmsUICase()
 
-        assertEquals("A New Hope", toFilmsUiCase[0].title)
-        assertEquals("Giving New Hope", toFilmsUiCase[0].openingCrawl)
+
+        assertEquals(expectedData, toFilmsUiCase)
+
     }
 }

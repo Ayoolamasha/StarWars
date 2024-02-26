@@ -1,19 +1,34 @@
 package com.ayoolamasha.starwars.utils
 
 
-import com.ayoolamasha.starwars.featureSearch.data.model.CharacterModelResponse
-import com.ayoolamasha.starwars.featureSearch.data.model.CharacterSearchResponse
-import com.ayoolamasha.starwars.featureSearch.data.model.FilmsResponse
-import com.ayoolamasha.starwars.featureSearch.data.model.PlanetResponse
-import com.ayoolamasha.starwars.featureSearch.data.model.SpeciesResponse
-import com.ayoolamasha.starwars.featureSearch.domain.model.CharacterDetailsQueryParams
-import com.ayoolamasha.starwars.featureSearch.domain.model.CharacterFilmsQueryParams
-import com.ayoolamasha.starwars.featureSearch.domain.model.CharacterUICase
-import com.ayoolamasha.starwars.featureSearch.domain.model.FilmsUiCase
-import com.ayoolamasha.starwars.featureSearch.domain.model.PlanetUiCase
-import com.ayoolamasha.starwars.featureSearch.domain.model.SpeciesUiCase
+import com.ayoolamasha.starwars.data.model.CharacterDetailsQueryParams
+import com.ayoolamasha.starwars.data.model.CharacterFilmsQueryParams
+import com.ayoolamasha.starwars.data.model.CharacterModelResponse
+import com.ayoolamasha.starwars.data.model.CharacterSearchResponse
+import com.ayoolamasha.starwars.data.model.FilmsResponse
+import com.ayoolamasha.starwars.data.model.PlanetResponse
+import com.ayoolamasha.starwars.data.model.SpeciesResponse
+import com.ayoolamasha.starwars.domain.model.Characters
+import com.ayoolamasha.starwars.domain.model.Films
+import com.ayoolamasha.starwars.domain.model.Planets
+import com.ayoolamasha.starwars.domain.model.Species
 
 val fakeCharacterModelResponse = CharacterModelResponse(
+    name = "Luke SkyWalker",
+    birthYear = "19BBY",
+    height = "172",
+    films = listOf(
+        "https://swapi.dev/api/films/1/",
+        "https://swapi.dev/api/films/2/",
+        "https://swapi.dev/api/films/3/",
+        "https://swapi.dev/api/films/6/"
+    ),
+    homeWorld = "https://swapi.dev/api/planets/1/",
+    species = listOf(""),
+    url = "https://swapi.dev/api/people/1/",
+)
+
+val fakeExpectedCharacterModelResponse = CharacterModelResponse(
     name = "Luke SkyWalker",
     birthYear = "19BBY",
     height = "172",
@@ -49,7 +64,7 @@ val fakeFilmsResponse = FilmsResponse(
 )
 
 
-val fakeCharacterUICase = CharacterUICase(
+val fakeCharacters = Characters(
     name = "Luke SkyWalker",
     birthYear = "19BBY",
     height = "172",
@@ -64,18 +79,18 @@ val fakeCharacterUICase = CharacterUICase(
     url = "https://swapi.dev/api/people/1/",
 )
 
-val fakePlanetUiCase = PlanetUiCase(
+val fakePlanets = Planets(
     name = "Earth",
     population = "7000000000",
 )
 
-val fakeSpeciesUICase = SpeciesUiCase(
+val fakeSpecies = Species(
     name = "Human",
     language = "English",
     homeWorld = "Earth",
 )
 
-val fakeFilmsUICase = FilmsUiCase(
+val fakeFilms = Films(
     title = "A New Hope",
     openingCrawl = "Hope Is Near"
 )
@@ -94,3 +109,4 @@ val fakeCharacterFilmsQueryParams = CharacterFilmsQueryParams(
     ),
     characterName = "Luke SkyWalker"
 )
+

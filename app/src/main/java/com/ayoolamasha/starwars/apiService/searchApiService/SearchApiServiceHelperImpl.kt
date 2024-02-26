@@ -1,10 +1,10 @@
 package com.ayoolamasha.starwars.apiService.searchApiService
 
-import com.ayoolamasha.starwars.featureSearch.data.model.CharacterModelResponse
-import com.ayoolamasha.starwars.featureSearch.data.model.CharacterSearchResponse
-import com.ayoolamasha.starwars.featureSearch.data.model.FilmsResponse
-import com.ayoolamasha.starwars.featureSearch.data.model.PlanetResponse
-import com.ayoolamasha.starwars.featureSearch.data.model.SpeciesResponse
+import com.ayoolamasha.starwars.data.model.CharacterModelResponse
+import com.ayoolamasha.starwars.data.model.CharacterSearchResponse
+import com.ayoolamasha.starwars.data.model.FilmsResponse
+import com.ayoolamasha.starwars.data.model.PlanetResponse
+import com.ayoolamasha.starwars.data.model.SpeciesResponse
 import retrofit2.Response
 import javax.inject.Inject
 import javax.inject.Singleton

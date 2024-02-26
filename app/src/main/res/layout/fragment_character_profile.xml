@@ -7,15 +7,15 @@
 
         <variable
             name="characterUi"
-            type="com.ayoolamasha.starwars.featureSearch.domain.model.CharacterUICase" />
+            type="com.ayoolamasha.starwars.domain.model.Characters" />
 
         <variable
             name="planetUi"
-            type="com.ayoolamasha.starwars.featureSearch.domain.model.PlanetUiCase" />
+            type="com.ayoolamasha.starwars.domain.model.Planets" />
 
         <variable
             name="speciesUI"
-            type="com.ayoolamasha.starwars.featureSearch.domain.model.SpeciesUiCase" />
+            type="com.ayoolamasha.starwars.domain.model.Species" />
     </data>
 
         <androidx.constraintlayout.widget.ConstraintLayout

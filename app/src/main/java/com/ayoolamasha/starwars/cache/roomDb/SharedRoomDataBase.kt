@@ -4,12 +4,12 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.ayoolamasha.starwars.cache.CustomTypeConverter
+import com.ayoolamasha.starwars.cache.roomDb.charactersDb.CharacterDao
+import com.ayoolamasha.starwars.cache.roomDb.charactersDb.CharactersEntity
 import com.ayoolamasha.starwars.cache.roomDb.filmsDb.FilmsDao
 import com.ayoolamasha.starwars.cache.roomDb.filmsDb.FilmsEntity
 import com.ayoolamasha.starwars.cache.roomDb.planetDb.PlanetDao
 import com.ayoolamasha.starwars.cache.roomDb.planetDb.PlanetEntity
-import com.ayoolamasha.starwars.cache.roomDb.recentSearchDb.CharacterDao
-import com.ayoolamasha.starwars.cache.roomDb.recentSearchDb.CharactersEntity
 import com.ayoolamasha.starwars.cache.roomDb.speciesDb.SpeciesDao
 import com.ayoolamasha.starwars.cache.roomDb.speciesDb.SpeciesEntity
 
